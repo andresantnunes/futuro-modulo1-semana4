@@ -40,7 +40,7 @@ public class ArraysAula1 {
 //        System.out.println();
 //        for (int i=0; i < numero.length; i++){
 //            System.out.println(numero[i]);
-        }
+//        }
 
 ////    Exemplo 2 de Arrays
 //        String[] strings = {"Andre","0","22","aula"};
