@@ -19,6 +19,8 @@ public class ArrayLeitura {
 
 
 
+
+
         // numero não existe
         int numero2 = 20;
 
