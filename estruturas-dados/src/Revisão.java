@@ -2,32 +2,51 @@ import java.util.*;
 
 public class Revisão {
     public static void main(String[] args) {
-        int[] array = new int[3];
-        array[0] = 1;
-        array[1] = 1;
-        array[2] = 1;
-        int length = array.length;
+        int[] array = new int[3]; // criando um novo array de tamanho fixo
+        array[0] = 1; // adiciona o valor "1" na primeira posição
+        array[1] = 2; // adiciona o valor "2" na segunda posição
+        array[2] = 3; // adiciona o valor "3" na terceira posição
+        int length = array.length; // retorna o tamanhao do array
 
-        int[][] matriz = new int[3][3];
-        matriz[0][0] = 1;
-        matriz[1][0] = 1;
-        matriz[2][0] = 1;
-        int lengthMatriz1 = matriz.length;
-        int lengthMatriz2 = matriz[0].length;
+        int[][] matriz = new int[3][3]; //criando uma matriz 3 linhas e 3 colunas, não pode ter mais posições
+        matriz[0][0] = 100; // adiciona o valor 100 na intersecção da linha 0 e coluna 0
+        matriz[0][1] = 101; // adiciona o valor 101 na intersecção da linha 0 e coluna 1
+        matriz[0][2] = 102; // adiciona o valor 102 na intersecção da linha 0 e coluna 2
+        matriz[1][0] = 102; // adiciona o valor 110 na intersecção da linha 1 e coluna 0
+        matriz[1][1] = 111; // adiciona o valor 111 na intersecção da linha 1 e coluna 1
+        matriz[1][2] = 112; // adiciona o valor 112 na intersecção da linha 1 e coluna 2
+        // a última linha tem valor de zeros, que é o valor padrão
+        int lengthMatriz1 = matriz.length;  //tamanho do primeiro array (linhas)
+        int lengthMatriz2 = matriz[0].length; //tamanho do segundo array (colunas)
 
+        String[][] matrizString = new String[2][2]; //cria uma matriz de 2 linhas e 2 colunas, o valor padrão é null
+        for(int linha = 0; linha<matrizString.length; linha++){ //loop pelas linhas
+            for (int coluna = 0; coluna<matrizString[0].length; coluna++){ // loop pelas colunhas de cada linha
+                System.out.println(matrizString[linha][coluna]);
+            }
+        }
+
+        // Criando uma collection utilizando o ArrayList,
+        // é utilizada para agregar todas as "filhas" de Collection
         Collection<Integer> collection = new ArrayList<>();
-        collection.add(1);
-        collection.add(1);
-        collection.add(1);
-        int listLength = collection.size();
-        collection.clear();
-        collection.addAll();
+        collection.add(1); // adiciona o valor 1 ao fim da collection
+        collection.add(2); // adiciona o valor 2 ao fim da collection
+        collection.add(3); // adiciona o valor 3 ao fim da collection
+        int collectionLength = collection.size(); // retorna o valor do tamanho de casas da collection
+        collection.clear(); // limpa a collection
+
+        ArrayList<Integer> arrayListExemplo = new ArrayList<>(); // criando uma lista de exemplo
+        arrayListExemplo.add(12); // adicionando um item a lista de exemplo
+        arrayListExemplo.add(13); // adicionando um item a lista de exemplo
+        arrayListExemplo.add(14); // adicionando um item a lista de exemplo
+
+        collection.addAll(arrayListExemplo); // recebe uma collection(list(arrayList, LinkedList), set, queue) e copia todos os itens dele para dentro da collection
         collection.remove(1);
         collection.removeAll();
         collection.containsAll();
         collection.contains();
 
-
+/*
         List<Integer> list = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
         list.add(1);
@@ -77,15 +96,15 @@ public class Revisão {
         linkedList.removeFirst();
         linkedList.removeFirstOccurrence(1);
         linkedList.removeLastOccurrence(1);
-        linkedList.toArray()
+        linkedList.toArray();
 
         Set<Integer> set = new HashSet<>();
         set.add(1);
-        set.add(1);
-        set.add(1);
+        set.add(2);
+        set.add(2);
 //        int listLength = set.size();
         set.clear();
-        set.addAll();
+        set.addAll(arrayList);
         set.remove(1);
         set.removeAll();
         set.contains();
@@ -204,7 +223,7 @@ public class Revisão {
 
         Collections.reverse(list);
 
-
+*/
     }
 
 }
