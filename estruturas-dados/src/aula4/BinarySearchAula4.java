@@ -10,26 +10,19 @@ public class BinarySearchAula4 {
         lista.add(2); // adiciona item a lista
         lista.add(3); // adiciona item a lista
         lista.add(11); // adiciona item a lista
+        lista.add(10); //adionando item fora de ordem
 
-
-        Collections.sort(lista); // ordena a lista, é necessário para realizar o binary search
-
-        System.out.println("Resultado de busca binária: "
-                +Collections.binarySearch(lista, 7)); //procurando na lista o valor 1 com o algoritimo binary search
-                // se o binary search não encontra o valor ele retorna ((o ultimo endereço) + 1) *(-1)
-        lista.add(10);
-        System.out.println("Resultado de busca binária: "
-                +Collections.binarySearch(lista, 10));
         if(Collections.binarySearch(lista,10) <= -1){
-            Collections.sort(lista);
+            Collections.sort(lista); // realiza a organização da lista em ordem do menor para o maior
             if(Collections.binarySearch(lista,10) <= -1)
                 System.out.println("Valor 10 não encontrado na lista");
             else
                 System.out.println("Valor 10 encontrado na lista");
         }
 
-//        for (Integer item: lista){ // executa para cada item da lista
-//            System.out.println(item);
-//        }
+        System.out.println("Resultado de busca binária: "
+                +Collections.binarySearch(lista, 7)); //procurando na lista o valor 1 com o algoritimo binary search
+        // se o binary search não encontra o valor ele retorna um valor negativo
+        // ((lista.size()) + 1) *(-1),
     }
 }
