@@ -1,5 +1,6 @@
 package aula4;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class PriorityQueueAula4 {
@@ -24,6 +25,15 @@ public class PriorityQueueAula4 {
         for(int i =0; i < length; i++){ // loop pela fila
             //retornar e remover os itens da fila, ela retorna os items ordenados
             System.out.println(priorityQueue.poll());
+        }
+
+
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add("Valor 1");
+        lista.add("Valor 2");
+        lista.add("Valor 3");
+        for (String item: lista){
+            System.out.println(item);
         }
     }
 }
