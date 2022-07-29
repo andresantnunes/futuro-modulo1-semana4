@@ -20,11 +20,11 @@ public class Revisão {
         int lengthMatriz2 = matriz[0].length; //tamanho do segundo array (colunas)
 
         String[][] matrizString = new String[2][2]; //cria uma matriz de 2 linhas e 2 colunas, o valor padrão é null
-        for(int linha = 0; linha<matrizString.length; linha++){ //loop pelas linhas
-            for (int coluna = 0; coluna<matrizString[0].length; coluna++){ // loop pelas colunhas de cada linha
-                System.out.println(matrizString[linha][coluna]);
-            }
-        }
+//        for(int linha = 0; linha<matrizString.length; linha++){ //loop pelas linhas
+//            for (int coluna = 0; coluna<matrizString[0].length; coluna++){ // loop pelas colunhas de cada linha
+//                System.out.println(matrizString[linha][coluna]);
+//            }
+//        }
 
         // Criando uma collection utilizando o ArrayList,
         // é utilizada para agregar todas as "filhas" de Collection
@@ -32,8 +32,8 @@ public class Revisão {
         collection.add(1); // adiciona o valor 1 ao fim da collection
         collection.add(2); // adiciona o valor 2 ao fim da collection
         collection.add(3); // adiciona o valor 3 ao fim da collection
+        collection.add(14); // adiciona o valor 14 ao fim da collection
         int collectionLength = collection.size(); // retorna o valor do tamanho de casas da collection
-        collection.clear(); // limpa a collection
 
         ArrayList<Integer> arrayListExemplo = new ArrayList<>(); // criando uma lista de exemplo
         arrayListExemplo.add(12); // adicionando um item a lista de exemplo
@@ -41,10 +41,13 @@ public class Revisão {
         arrayListExemplo.add(14); // adicionando um item a lista de exemplo
 
         collection.addAll(arrayListExemplo); // recebe uma collection(list(arrayList, LinkedList), set, queue) e copia todos os itens dele para dentro da collection
-        collection.remove(1);
-        collection.removeAll();
-        collection.containsAll();
-        collection.contains();
+        collection.remove(1); // remover um item específico pelo valor
+        collection.removeAll(arrayListExemplo); // remove todos os itens que tem os mesmos valor que a collection arrayExemplo
+        System.out.println("Contains all collection:"+collection.containsAll(arrayListExemplo)); // verifica se uma collection tem todos os item da outra collection, se tiver os valore retorna true se não tiver retorna false
+        System.out.println("Contains 2 na collection:"+collection.contains(2));// verifica se o valor 2 existe dentro da collection, se exister retora true, se não retorna false
+        collection.clear(); // limpa a collection
+        System.out.println(collection);
+
 
 /*
         List<Integer> list = new ArrayList<>();
