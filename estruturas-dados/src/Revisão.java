@@ -180,92 +180,165 @@ public class Revisão {
         treeSet.last(); // retorn o ultimo item do treeSet
         treeSet.pollFirst(); // retorna e remove o primeiro item do treeSet
         treeSet.first(); // retorn o primeiro item do treeSet
-        
+
         treeSet.clear();
 
-
-        /*
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(1);
-        queue.add(1);
-        queue.add(1);
-        int listLength = queue.size();
-        queue.clear();
-        queue.addAll();
+//      Filas não tem get, elas leem apenas o primeiro item da fila (FIFO)
+        Queue<Integer> queue = new LinkedList<>(); // criando uma fila utilizando LinkedList
+        queue.add(11); // sempre adiciona no fim da lista
+        queue.add(12);
+        queue.add(13);
+        queue.add(14);
+        queue.add(15);
+        int queueLength = queue.size();
+        queue.addAll(arrayList);
         queue.remove(1);
-        queue.removeAll();
-        queue.element();
-        queue.poll();
-        queue.peek();
+        queue.removeAll(arrayList);
 
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        priorityQueue.add(1);
-        priorityQueue.add(1);
-        priorityQueue.add(1);
-        int listLength = priorityQueue.size();
-        priorityQueue.clear();
-        priorityQueue.addAll();
+        queue.element(); // retorna o primiero item de uma fila, ele pode dar erro caso a fila esteja vazia
+        queue.poll(); // retorna e remove o primeiro item da fila
+        queue.peek(); // retorna o primiero item de uma fila, retorna null caso a fila esteja vazia
+
+        queue.clear();
+
+        //é uma fila que ordena os item por prioridade, no geral ordem ascendente
+        // ele apenas organiza os item quando realizamos um peek ou um poll
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(); // cria uma priorityQueue
+        priorityQueue.add(11); // adiciona o item em qualquer lugar da memória da fila com base em um algorítimo
+        priorityQueue.add(13);
+        priorityQueue.add(15);
+        priorityQueue.add(14);
+        priorityQueue.add(12);
+        int priorityQueueLength = priorityQueue.size();
+
+//        for(int i=0; i<priorityQueueLength;i++){
+//            System.out.println(priorityQueue.poll()); // ele retorna os item em ordem ascendente
+//        }
+        priorityQueue.addAll(arrayList);
         priorityQueue.remove(1);
-        priorityQueue.removeAll();
-        priorityQueue.element();
+        priorityQueue.removeAll(arrayList);
+//        priorityQueue.element(); //da erro caso a fila esteja vazia
         priorityQueue.poll();
         priorityQueue.peek();
+        priorityQueue.clear();
 
-        Deque<Integer> deque = new LinkedList<>();
-        deque.add(1);
-        deque.add(1);
-        deque.add(1);
-        int listLength = priorityQueue.size();
-        deque.clear();
-        deque.addAll();
+
+        //Deque é uma Double Ended Queue, é uma Fila de Duas Pontas
+        // Pode atuar como FIFO ou como LIFO
+        // No geral vai ser usada como LIFO, Last In First Out, ou pilha
+        Deque<Integer> deque = new LinkedList<>(); // cria uma deque com uma LinkedList
+        deque.add(111);
+        deque.add(122);
+        deque.add(133);
+        int dequeLength = priorityQueue.size();
+        deque.addAll(arrayList);
         deque.remove(1);
-        deque.removeAll();
-        deque.element();
-        deque.peek();
-        deque.peekFirst();
-        deque.peekLast();
-        deque.addFirst();
-        deque.addLast();
-        deque.removeFirst();
-        deque.removeLast();
-        deque.removeFirstOccurrence();
-        deque.removeLastOccurrence();
-        deque.poll();
-        deque.pollFirst();
-        deque.pollLast();
+        deque.removeAll(arrayList);
+
+        deque.element(); // le o primeiro item e retorna erro caso a lista esteja vazia
+        deque.peek(); // retorna o primeiro item
+        deque.peekFirst(); // retorna o valor do primeiro item
+        deque.peekLast(); // reotorna o valor do ultimo item
+
+        deque.addFirst(13); // adiciona um item na primeira posição da dequeue
+        deque.addLast(12); // adiciona um item na ultima posição da dequeue
+
+        deque.removeFirst(); // remove o item na primeiro posição da dequeue
+        deque.removeLast(); // remove o item na ultima posição da dequeue
+
+        deque.removeFirstOccurrence(1); // remove a primeira ocorrencia do valor 1
+        deque.removeLastOccurrence(2); // remove a ultima ocorrencia do valor 2
+
+        deque.poll(); // retorna e remove o item na primeiro posição da dequeue
+        deque.pollFirst();// retorna e remove o item na primeiro posição da dequeue
+        deque.pollLast();// retorna e remove o item na ultima posição da dequeue
+
+        deque.clear();
+
+        // LIFO, ultimo a entrar é o primeiro a sair
+        deque.addLast(1);
+        deque.addLast(2);
+        deque.addLast(3);
+        deque.addLast(4);
+        deque.addLast(5);
+        deque.addLast(10);
+        deque.addLast(11);
+        deque.addLast(12); // (fim) 12,11,10,5,4,3,2,1 (inicio)
+        dequeLength = deque.size();
+
+//        for (int i=0;i<dequeLength;i++)
+//            System.out.println(deque.pollLast());
+        deque.clear();
+
+        // FIFO, primero a entrar é o primeiro a sair
+        deque.addLast(1);
+        deque.addLast(2);
+        deque.addLast(3);
+        deque.addLast(4);
+        deque.addLast(5);
+        deque.addLast(10);
+        deque.addLast(11);
+        deque.addLast(12); // (fim) 12,11,10,5,4,3,2,1 (inicio)
+        dequeLength = deque.size();
+
+        for (int i=0;i<dequeLength;i++)
+            System.out.println(deque.pollFirst()); //leio do inicio
 
 
-        ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
+        ArrayDeque<Integer> arrayDeque = new ArrayDeque<>(); //ArrayDeque é identico ao Deque
         arrayDeque.add(1);
         arrayDeque.add(1);
         arrayDeque.add(1);
-        int listLength = priorityQueue.size();
+        int arrayDequeLength = arrayDeque.size();
         arrayDeque.clear();
-        arrayDeque.addAll();
+        arrayDeque.addAll(arrayDeque);
         arrayDeque.remove(1);
-        arrayDeque.removeAll();
+        arrayDeque.removeAll(arrayDeque);
         arrayDeque.element();
+
         arrayDeque.peek();
         arrayDeque.peekFirst();
         arrayDeque.peekLast();
-        arrayDeque.addFirst();
-        arrayDeque.addLast();
+
+        arrayDeque.addFirst(14);
+        arrayDeque.addLast(23);
+
         arrayDeque.removeFirst();
         arrayDeque.removeLast();
-        arrayDeque.removeFirstOccurrence();
-        arrayDeque.removeLastOccurrence();
+
+        arrayDeque.removeFirstOccurrence(1);
+        arrayDeque.removeLastOccurrence(2);
+
         arrayDeque.poll();
         arrayDeque.pollFirst();
         arrayDeque.pollLast();
         arrayDeque.toArray();
 
 
-        Collections.sort(list);
-        Collections.binarySearch(list,1);
+        ArrayList<Integer> listaExemplo2 = new ArrayList<>();
+        listaExemplo2.add(10);
+        listaExemplo2.add(11);
+        listaExemplo2.add(12);
+        listaExemplo2.add(13);
+        listaExemplo2.add(14);
+        listaExemplo2.add(15);
+        listaExemplo2.add(106);
+        listaExemplo2.add(1023);
+        listaExemplo2.add(1024);
+        listaExemplo2.add(4023);
 
-        Collections.reverse(list);
+        Collections.sort(listaExemplo2); // organiza a lista que é colocada nele
+        System.out.println(listaExemplo2);
 
-*/
+//        Collections.reverse(listaExemplo2); // reverte a ordem da lista que é colocada nele
+
+//        Collections.binarySearch(list,1); // procura o indice do valor informado na lista informa
+//        , caso o valor não exista na lista ou caso a lista esteja fora de ordem ele retorna um número negativo
+//        o numero negativo é igual a => ((lista.size())+1)*(-1)
+
+
+
+
     }
 
 }
