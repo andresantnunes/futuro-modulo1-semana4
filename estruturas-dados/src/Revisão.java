@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Revisão {
     public static void main(String[] args) {
@@ -327,7 +328,7 @@ public class Revisão {
         listaExemplo2.add(1024);
         listaExemplo2.add(4023);
 
-        Collections.sort(listaExemplo2); // organiza a lista que é colocada nele
+//        Collections.sort(listaExemplo2); // organiza a lista que é colocada nele
         System.out.println(listaExemplo2);
 
 //        Collections.reverse(listaExemplo2); // reverte a ordem da lista que é colocada nele
